@@ -21,6 +21,7 @@ jobs:
           ${{ runner.os }}-node-
     - run: git clone https://github.com/meilisearch/specifications
     - run: yarn install
+    - run: git pull # this can be useful if the action is been re-run
     - run: yarn build
     - run: rm -rf docs
     - run: cp -r .vuepress/dist docs
@@ -36,6 +37,9 @@ jobs:
     needs: build-deploy
     runs-on: ubuntu-18.04
     steps:
+      - name: Wait 2 minutes for the github-pages to deploy
+        # usually the deployment of the github-pages takes ~1 minute thus we should be safe by sleeping two minutes
+        run: sleep 120
       - uses: actions/checkout@master
       - name: Run scraper
         env:
