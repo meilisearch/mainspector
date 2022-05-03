@@ -36,15 +36,18 @@ jobs:
   run-scraper:
     needs: build-deploy
     runs-on: ubuntu-18.04
+    env:
+      HOST_URL: ${{ secrets.MEILISEARCH_HOST_URL }}
+      API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
     steps:
       - name: Wait 2 minutes for the github-pages to deploy
         # usually the deployment of the github-pages takes ~1 minute thus we should be safe by sleeping two minutes
         run: sleep 120
       - uses: actions/checkout@master
+      - name: Delete all documents in index
+        run: curl -X DELETE "$HOST_URL/indexes/main/documents"
       - name: Run scraper
         env:
-          HOST_URL: ${{ secrets.MEILISEARCH_HOST_URL }}
-          API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
           CONFIG_FILE_PATH: ${{ github.workspace }}/.vuepress/scraper/
         run: |
           docker run -t --rm \
