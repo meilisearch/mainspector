@@ -25,7 +25,7 @@ jobs:
       - run: yarn build
       - run: rm -rf docs
       - run: cp -r .vuepress/dist docs
-      - run: cp CNAME docs/CNAME
+      - run: cp CNAME favicon.ico docs/
       - run: |
           git config --global user.name "tamo Le bot"
           git config --global user.email "tamo@meilisearch.com"
