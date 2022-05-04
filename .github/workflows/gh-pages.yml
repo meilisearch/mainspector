@@ -1,9 +1,9 @@
 name: GitHub pages and scraping
 
 on:
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
   schedule:
     - cron: "0 12 * * *" # every day at 12:00PM
 
@@ -25,6 +25,7 @@ jobs:
       - run: yarn build
       - run: rm -rf docs
       - run: cp -r .vuepress/dist docs
+      - run: cp CNAME docs/CNAME
       - run: |
           git config --global user.name "tamo Le bot"
           git config --global user.email "tamo@meilisearch.com"
