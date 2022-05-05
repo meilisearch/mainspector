@@ -1,7 +1,7 @@
 {
-  "allowed_domains": ["spec.meilisearch.com"],
+  "allowed_domains": ["specs.meilisearch.com"],
   "index_uid": "main",
-  "start_urls": ["https://spec.meilisearch.com"],
+  "start_urls": ["https://specs.meilisearch.com"],
   "selectors": {
     "lvl0": {
       "selector": ".theme-default-content > ul:nth-child(1) li:nth-child(1)",
