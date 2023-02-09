@@ -57,4 +57,4 @@ jobs:
             -e MEILISEARCH_HOST_URL=$HOST_URL \
             -e MEILISEARCH_API_KEY=$API_KEY \
             -v $CONFIG_FILE_PATH:/config \
-            getmeili/docs-scraper:v0.12.1 pipenv run ./docs_scraper /config/config.json
+            getmeili/docs-scraper:v0.12.7 pipenv run ./docs_scraper /config/config.json
