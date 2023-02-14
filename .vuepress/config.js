@@ -19,7 +19,7 @@ module.exports = {
       {
         hostUrl: "https://ms-2e56dc05278b-269.lon.meilisearch.io",
         apiKey:
-          'dqWEB2tce678ba2b88af48c599c51497ece5611024d8b4b6d78b3c6227217036e42771ef',
+          '89b77682d7f02eccbf4c99ac00ddd2837cc6c03a677a826411e6f7d3e98d5e6c',
         indexUid: 'main',
         debug: false,
         enableDarkMode: 'auto'
