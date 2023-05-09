@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Cache dependencies
@@ -36,7 +36,7 @@ jobs:
 
   run-scraper:
     needs: build-deploy
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     env:
       HOST_URL: ${{ secrets.MEILISEARCH_HOST_URL }}
       API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
